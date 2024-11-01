@@ -8,7 +8,7 @@ export const Global = {
 
 }
 
-//Ruta del Backend  desplegado localmente
+//Ruta del Backend  desplegado localmente  :  npm run start:watch  
 //export const Global = {
 //    url: "https://localhost:3900/api"  
 //  }
