@@ -7,29 +7,32 @@ import { Feed } from "../components/publication/Feed";
 import { People } from "../components/user/People";
 import { Config } from "../components/user/Config";
 import { Error404 } from "../components/layouts/Error404";
+import { AuthProvider } from '../context/AuthProvider';
 
 
 export const Routing = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Cargamos los componentes de la ruta pública */}
-        <Route path="/" element={<PublicLayout />}>
+      <AuthProvider>
+       <Routes>
+         {/* Cargamos los componentes de la ruta pública */}
+         <Route path="/" element={<PublicLayout />}>
           <Route index element={<Login />} />
           <Route path='login' element={<Login />} />
           <Route path='registro' element={<Register />} />
         </Route>
 
-        {/* Cargamos los componentes de la ruta privada */}
-        <Route path="/rsocial" element={<PrivateLayout />}>
+         {/* Cargamos los componentes de la ruta privada */}
+         <Route path="/rsocial" element={<PrivateLayout />}>
           <Route index element={<Feed />} />
           <Route path='feed' element={<Feed />} />
           <Route path='gente' element={<People />} />
           <Route path='ajustes' element={<Config />} />
           <Route path='*' element={<Error404 />} />
 
-        </Route>
-      </Routes>
+         </Route>
+       </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
