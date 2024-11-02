@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "../../hooks/useForm";
+import  useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { Global } from '../../helpers/Global';
 import Swal from 'sweetalert2';
@@ -23,7 +23,7 @@ export const Register = () => {
 
     // Obtener los datos del formulario
     let newUser = form;
-
+  
     // Petición a la API (Backend) para guardar el usuario en la BD
     const request = await fetch(Global.url + 'user/register', {
       method: 'POST',

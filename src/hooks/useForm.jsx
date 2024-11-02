@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useForm = (initialObj = {}) => {
+const useForm = (initialObj = {}) => {
 
   //hook para cuando se llena el formulario
   const [form, setForm] = useState(initialObj);
@@ -18,5 +18,8 @@ export const useForm = (initialObj = {}) => {
   return {
     form,
     changed
-  }
+  };
 };
+
+/////exportacion por defecto
+export default useForm;
